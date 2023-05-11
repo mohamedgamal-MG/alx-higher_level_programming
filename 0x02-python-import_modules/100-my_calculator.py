@@ -22,4 +22,4 @@ if __name__ == '__main__':
             print("{} {} {} = {}".format(argv[1], argv[2], argv[3], result))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
-            sys.exit(1)
+            exit(1)
