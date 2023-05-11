@@ -8,16 +8,16 @@ if __name__ == '__main__':
         sys.exit(1)
     elif count == 3:
         if sys.argv[2] == "+":
-            result = calculator_1.add(sys.argv[1], sys.argv[3])
+            result = calculator_1.add(int(sys.argv[1]), int(sys.argv[3]))
             print("{} {} {} = {}".format(sys.argv[1], sys.argv[2], sys.argv[3], result))
         elif sys.argv[2] == "-":
-            result = calculator_1.sub(sys.argv[1], sys.argv[3])
+            result = calculator_1.sub(int(sys.argv[1]), int(sys.argv[3]))
             print("{} {} {} = {}".format(sys.argv[1], sys.argv[2], sys.argv[3], result))
         elif sys.argv[2] == "*":
-            result = calculator_1.mul(sys.argv[1], sys.argv[3])
+            result = calculator_1.mul(int(sys.argv[1]), int(sys.argv[3]))
             print("{} {} {} = {}".format(sys.argv[1], sys.argv[2], sys.argv[3], result))
         elif sys.argv[2] == "/":
-            result = calculator_1.div(sys.argv[1], sys.argv[3])
+            result = calculator_1.div(int(sys.argv[1]), int(sys.argv[3]))
             print("{} {} {} = {}".format(sys.argv[1], sys.argv[2], sys.argv[3], result))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
