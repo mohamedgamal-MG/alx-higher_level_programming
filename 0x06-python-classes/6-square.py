@@ -1,4 +1,5 @@
-quare module"""
+#!/usr/bin/python3
+"""my square module"""
 
 
 class Square:
