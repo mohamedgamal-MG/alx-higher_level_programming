@@ -1,150 +1,112 @@
-# SQL Introduction Project
+# SQL Introduction Tasks
 
-This repository contains SQL scripts for the SQL Introduction project. The project requirements are as follows:
+This repository contains SQL scripts to perform various tasks on a MySQL database named `hbtn_0c_0`. Below, you'll find a description of each script and what it does.
 
-## Requirements
-- Allowed editors: vi, vim, emacs
-- All files will be executed on Ubuntu 20.04 LTS using MySQL 8.0 (version 8.0.25)
-- All files should end with a new line
-- All SQL queries should have a comment just before (i.e. syntax above)
-- All files should start with a comment describing the task
-- All SQL keywords should be in uppercase (SELECT, WHERE…)
-- A README.md file, at the root of the folder of the project, is mandatory
+## Task 0: List databases
+- File: [0-list_databases.sql](0x0D-SQL_introduction/0-list_databases.sql)
+- Description: This script lists all databases of your MySQL server.
+- Usage: `cat 0-list_databases.sql | mysql -hlocalhost -uroot -p`
 
-## General Information
-In this project, we are working with MySQL 8.0 on Ubuntu 20.04 LTS. The scripts are designed to perform various tasks related to creating databases, tables, and managing data.
+## Task 1: Create a database
+- File: [1-create_database_if_missing.sql](0x0D-SQL_introduction/1-create_database_if_missing.sql)
+- Description: This script creates the database `hbtn_0c_0` in your MySQL server if it doesn't already exist.
+- Usage: `cat 1-create_database_if_missing.sql | mysql -hlocalhost -uroot -p`
 
-### Installation
-To install MySQL 8.0 on Ubuntu 20.04 LTS, follow these steps:
+## Task 2: Delete a database
+- File: [2-remove_database.sql](0x0D-SQL_introduction/2-remove_database.sql)
+- Description: This script deletes the database `hbtn_0c_0` from your MySQL server if it exists.
+- Usage: `cat 2-remove_database.sql | mysql -hlocalhost -uroot -p`
 
-```bash
-sudo apt update
-sudo apt install mysql-server
-```
+## Task 3: List tables
+- File: [3-list_tables.sql](0x0D-SQL_introduction/3-list_tables.sql)
+- Description: This script lists all the tables of a database (given as an argument) in your MySQL server.
+- Usage: `cat 3-list_tables.sql | mysql -hlocalhost -uroot -p mysql`
 
-### Connecting to MySQL Server
-To connect to your MySQL server, use the following command:
+## Task 4: First table
+- File: [4-first_table.sql](0x0D-SQL_introduction/4-first_table.sql)
+- Description: This script creates a table called `first_table` in the `hbtn_0c_0` database with columns `id` (INT) and `name` (VARCHAR(256)).
+- Usage: `cat 4-first_table.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-```bash
-sudo mysql
-```
+## Task 5: Full description
+- File: [5-full_table.sql](0x0D-SQL_introduction/5-full_table.sql)
+- Description: This script prints the full description of the table `first_table` from the `hbtn_0c_0` database in your MySQL server.
+- Usage: `cat 5-full_table.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-### Running the Scripts
-To execute the scripts, use the following format:
+## Task 6: List all in table
+- File: [6-list_values.sql](0x0D-SQL_introduction/6-list_values.sql)
+- Description: This script lists all rows of the table `first_table` from the `hbtn_0c_0` database in your MySQL server.
+- Usage: `cat 6-list_values.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-```bash
-cat script_name.sql | mysql -hlocalhost -uroot -p database_name
-```
+## Task 7: First add
+- File: [7-insert_value.sql](0x0D-SQL_introduction/7-insert_value.sql)
+- Description: This script inserts a new row in the table `first_table` of the `hbtn_0c_0` database in your MySQL server with values `id = 89` and `name = Best School`.
+- Usage: `cat 7-insert_value.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-Replace `script_name.sql` with the name of the script you want to run and `database_name` with the desired database name.
+## Task 8: Count 89
+- File: [8-count_89.sql](0x0D-SQL_introduction/8-count_89.sql)
+- Description: This script displays the number of records with `id = 89` in the table `first_table` of the `hbtn_0c_0` database in your MySQL server.
+- Usage: `cat 8-count_89.sql | mysql -hlocalhost -uroot -p hbtn_0c_0 | tail -1`
 
-## Task Descriptions
+## Task 9: Full creation
+- File: [9-full_creation.sql](0x0D-SQL_introduction/9-full_creation.sql)
+- Description: This script creates a table called `second_table` in the `hbtn_0c_0` database with columns `id` (INT), `name` (VARCHAR(256)), and `score` (INT). It also adds multiple rows to the table.
+- Usage: `cat 9-full_creation.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-### 0. List Databases
-Script: `0-list_databases.sql`
+## Task 10: List by best
+- File: [10-top_score.sql](0x0D-SQL_introduction/10-top_score.sql)
+- Description: This script lists all records of the table `second_table` of the `hbtn_0c_0` database in your MySQL server. Results display both the `score` and the `name`, ordered by score (top first).
+- Usage: `cat 10-top_score.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-This script lists all databases present in your MySQL server.
+## Task 11: Select the best
+- File: [11-best_score.sql](0x0D-SQL_introduction/11-best_score.sql)
+- Description: This script lists all records with a `score >= 10` in the table `second_table` of the `hbtn_0c_0` database in your MySQL server. Results display both the `score` and the `name`, ordered by score (top first).
+- Usage: `cat 11-best_score.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-### 1. Create a Database
-Script: `1-create_database_if_missing.sql`
+## Task 12: Cheating is bad
+- File: [12-no_cheating.sql](0x0D-SQL_introduction/12-no_cheating.sql)
+- Description: This script updates the score of the name 'Bob' to 10 in the table `second_table` of the `hbtn_0c_0` database. It doesn't use Bob's id value, only the name field.
+- Usage: `cat 12-no_cheating.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-This script creates the database `hbtn_0c_0` in your MySQL server if it doesn't already exist.
+## Task 13: Score too low
+- File: [13-change_class.sql](0x0D-SQL_introduction/13-change_class.sql)
+- Description: This script removes all records with a `score <= 5` in the table `second_table` of the `hbtn_0c_0` database in your MySQL server.
+- Usage: `cat 13-change_class.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-### 2. Delete a Database
-Script: `2-remove_database.sql`
+## Task 14: Average
+- File: [14-average.sql](0x0D-SQL_introduction/14-average.sql)
+- Description: This script computes the average temperature (Fahrenheit) of all records in the table `temperatures` of the `hbtn_0c_0` database in your MySQL server.
+- Usage: `cat 14-average.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-This script deletes the database `hbtn_0c_0` from your MySQL server if it exists.
+## Task 15: Number by score
+- File: [15-groups.sql](0x0D-SQL_introduction/15
 
-### 3. List Tables
-Script: `3-list_tables.sql`
+-groups.sql)
+- Description: This script lists the number of records with the same score in the table `temperatures` of the `hbtn_0c_0` database in your MySQL server. The list is sorted by the number of records (descending).
+- Usage: `cat 15-groups.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-This script lists all the tables in the database specified as an argument.
+## Task 16: Say my name
+- File: [16-no_link.sql](0x0D-SQL_introduction/16-no_link.sql)
+- Description: This script lists all records of the table `temperatures` of the `hbtn_0c_0` database in your MySQL server. It doesn't list rows without a name value. Results display the `score` and the `name`, ordered by descending score.
+- Usage: `cat 16-no_link.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-### 4. First Table
-Script: `4-first_table.sql`
+## Task 17: Go to UTF8
+- File: [100-move_to_utf8.sql](0x0D-SQL_introduction/100-move_to_utf8.sql)
+- Description: This script converts the database `hbtn_0c_0`, table `first_table`, and the field `name` in `first_table` to UTF8 (utf8mb4, collate utf8mb4_unicode_ci) in your MySQL server.
+- Usage: `cat 100-move_to_utf8.sql | mysql -hlocalhost -uroot -p`
 
-This script creates a table called `first_table` in the current database with columns `id` (INT) and `name` (VARCHAR(256)).
+## Task 18: Temperatures #0
+- File: [101-avg_temperatures.sql](0x0D-SQL_introduction/101-avg_temperatures.sql)
+- Description: This script calculates the average temperature (Fahrenheit) by city ordered by temperature (descending) from the `temperatures` table in the `hbtn_0c_0` database.
+- Usage: `cat 101-avg_temperatures.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-### 5. Full Description
-Script: `5-full_table.sql`
+## Task 19: Temperatures #1
+- File: [102-top_city.sql](0x0D-SQL_introduction/102-top_city.sql)
+- Description: This script displays the top 3 cities with the highest temperatures during July and August, ordered by temperature (descending), from the `temperatures` table in the `hbtn_0c_0` database.
+- Usage: `cat 102-top_city.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-This script prints the full description of the `first_table` from the database `hbtn_0c_0`.
+## Task 20: Temperatures #2
+- File: [103-max_state.sql](0x0D-SQL_introduction/103-max_state.sql)
+- Description: This script displays the maximum temperature of each state ordered by state name from the `temperatures` table in the `hbtn_0c_0` database.
+- Usage: `cat 103-max_state.sql | mysql -hlocalhost -uroot -p hbtn_0c_0`
 
-### 6. List All in Table
-Script: `6-list_values.sql`
-
-This script lists all rows of the `first_table` from the database `hbtn_0c_0`.
-
-### 7. First Add
-Script: `7-insert_value.sql`
-
-This script inserts a new row with `id = 89` and `name = "Best School"` into the `first_table`.
-
-### 8. Count 89
-Script: `8-count_89.sql`
-
-This script displays the number of records with `id = 89` in the `first_table` of the database `hbtn_0c_0`.
-
-### 9. Full Creation
-Script: `9-full_creation.sql`
-
-This script creates a table called `second_table` in the database `hbtn_0c_0` and adds multiple rows to it.
-
-### 10. List by Best
-Script: `10-top_score.sql`
-
-This script lists all records of the `second_table` ordered by score in descending order.
-
-### 11. Select the Best
-Script: `11-best_score.sql`
-
-This script lists all records with a score greater than or equal to 10 from the `second_table`, ordered by score in descending order.
-
-### 12. Cheating is Bad
-Script: `12-no_cheating.sql`
-
-This script updates the score of "Bob" to 10 in the `second_table` without using Bob's id.
-
-### 13. Score Too Low
-Script: `13-change_class.sql`
-
-This script removes all records with a score less than or equal to 5 from the `second_table`.
-
-### 14. Average
-Script: `14-average.sql`
-
-This script computes the average score of all records in the `second_table`.
-
-### 15. Number by Score
-Script: `15-groups.sql`
-
-This script lists the number of records with the same score in the `second_table`, ordered by the number of records in descending order.
-
-### 16. Say My Name
-Script: `16-no_link.sql`
-
-This script lists all records of the `second_table` with a valid name value, ordered by score in descending order.
-
-### 17. Go to UTF8
-Script: `100-move_to_utf8.sql`
-
-This script converts the database `hbtn_0c_0`, `first_table`, and the `name` field in `first_table` to UTF8 (utf8mb4, collate utf8mb4_unicode_ci).
-
-### 18. Temperatures #0
-Script: `101-avg_temperatures.sql`
-
-This script displays the average temperature (Fahrenheit) by city ordered by temperature (descending).
-
-### 19. Temperatures
-
- #1
-Script: `102-top_city.sql`
-
-This script displays the top 3 cities' temperature during July and August, ordered by temperature (descending).
-
-### 20. Temperatures #2
-Script: `103-max_state.sql`
-
-This script displays the maximum temperature of each state, ordered by the state name.
-
-Feel free to explore the scripts and run them to perform various tasks in MySQL!
+Please note that these scripts are designed for specific database configurations. Make sure to adapt them to your own environment as needed.
