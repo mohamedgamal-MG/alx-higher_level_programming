@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//use console.log(...) to print all output
+// Use console.log(...) to print each line
 
 console.log('C is fun');
 console.log('Python is cool');
