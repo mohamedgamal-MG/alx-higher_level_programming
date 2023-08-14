@@ -1,9 +1,7 @@
 #!/usr/bin/node
-
 //Get the number of commind-line argiments passed
-const argsCount = process.argv.length - 2;
 
-//Based on the number of arguments
+const argsCount = process.argv.length - 2;
 if (argsCount === 0) {
 	console.log('No argument');
 } else if (argsCount === 1) {
