@@ -1,12 +1,11 @@
 #!/usr/bin/node
 class Rectangle {
   constructor (w, h) {
-    if (w === 'number' && w > 0 && h === 'number' && h > 0) {
+    if (typeof w === 'number' && w > 0 && typeof h === 'number' && h > 0) {
       this.width = w;
       this.height = h;
     }
   }
-
 
   print () {
     for (let i = 0; i < this.height; i++) {
@@ -21,4 +20,4 @@ class Rectangle {
     }
   }
 }
-module.exports = Rectangle; 
+module.exports = Rectangle;
