@@ -1,4 +1,8 @@
 #!/usr/bin/node
+#!/usr/bin/node
+/**
+ * Check the parameters provided
+ */
 class Rectangle {
   constructor (w, h) {
     if (typeof w === 'number' && w > 0 && typeof h === 'number' && h > 0) {
@@ -6,9 +10,9 @@ class Rectangle {
       this.height = h;
     }
   }
-  
+
   print () {
-    for (let i = 0; i > this.height; i++) {
+    for (let i = 0; i < this.height; i++) {
       let myVar = '';
       let y = 0;
       while (y < this.width) {
